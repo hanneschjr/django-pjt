@@ -11,16 +11,15 @@
         <p>Olá! Meu nome é Antonio, sou desenvolvedor web.</p>
     </section>
     <section>
-        <h1>Habilidades</h1>
+        <h2>Habilidades</h2>
         <ul>
-            <li>Python</li>
-            <li>Django REST Framework</li>
-            <li>Git e GitHub</li>
-            <li>HTML/CSS</li>
+            {% for chave, dados in habilidades.items %}
+                <li>{{dados.nome}}</li>
+            {% endfor %}
         </ul>
     </section>
     <section>
-        <h1>Contatos</h1>
+        <h2>Contatos</h2>
         <p>Email: antonio@example.com</p>
         <p>LinkedIn: linkedin.com/in/antonio</p>
         <p>Telefone: (11) 1234-5678</p>
