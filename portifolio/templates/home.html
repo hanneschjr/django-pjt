@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portifólio</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Home | Meu Portfólio{% endblock %}
+
+{% block content %}
     <section>
         <h1>Sobre mim</h1>
         <p>Olá! Meu nome é Antonio, sou desenvolvedor web.</p>
@@ -24,5 +21,4 @@
         <p>LinkedIn: linkedin.com/in/antonio</p>
         <p>Telefone: (11) 1234-5678</p>
     </section>
-</body>
-</html>
+{% endblock %}
