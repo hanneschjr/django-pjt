@@ -237,7 +237,7 @@
                 <h3>{{ infos.titulo }}</h3>
                 <p>{{ infos.descricao }}</p>
                 <div class="project-tags">
-                    {% for tech in infos.tecnologia.split ', ' %}
+                    {% for tech in infos %}
                         <span class="tag">{{ tech }}</span>
                     {% endfor %}
                 </div>

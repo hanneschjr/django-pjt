@@ -10,4 +10,5 @@ def lista_projetos(request):
 
 def detalhes_projeto(request, id_projeto):
     projeto = projetos.get(id_projeto)
-    return render(request, 'detalhes_projeto.html', {'projeto': projeto})
+    infos = projeto.get('tecnologia').split(', ')
+    return render(request, 'detalhes_projeto.html', {'projeto': projeto, 'infos': infos})
