@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Antonio | Desenvolvedor Web{% endblock %}
 
@@ -6,6 +7,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-tag">
+            <div>
+                <img src="{% static 'img/escapulario.png' %}" alt="Antonio" class="hero-profile-image">
+            </div>
             <div class="dot"></div>
             <span>Disponível para novos projetos</span>
         </div>

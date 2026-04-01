@@ -9,6 +9,14 @@
     animation: fadeInUp 0.8s ease forwards;
 }
 
+.hero-profile-image {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
 .hero-tag {
     display: inline-flex;
     align-items: center;
@@ -23,6 +31,7 @@
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
+
 
 @keyframes pulse {
     0%, 100% { opacity: 1; }
