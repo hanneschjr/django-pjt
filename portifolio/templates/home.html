@@ -68,15 +68,15 @@
             <div class="line"></div>
         </div>
         <div class="skills-grid">
-            {% for chave, dados in habilidades.items %}
+            {% for habilidade in habilidades %}
             <div class="skill-card">
                 <div class="skill-icon">
-                    {% if dados.nome == 'Python' %}
+                    {% if habilidade.nome == 'Python' %}
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="16 18 22 12 16 6"></polyline>
                             <polyline points="8 6 2 12 8 18"></polyline>
                         </svg>
-                    {% elif dados.nome == 'Django' %}
+                    {% elif habilidade.nome == 'Django' %}
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="3" y1="9" x2="21" y2="9"></line>
@@ -90,11 +90,11 @@
                         </svg>
                     {% endif %}
                 </div>
-                <h3>{{ dados.nome }}</h3>
+                <h3>{{ habilidade.nome }}</h3>
                 <p>
-                    {% if dados.nome == 'Python' %}
+                    {% if habilidade.nome == 'Python' %}
                         Linguagem versátil para desenvolvimento web, automação e ciência de dados
-                    {% elif dados.nome == 'Django' %}
+                    {% elif habilidade.nome == 'Django' %}
                         Framework web robusto para aplicações escaláveis e seguras
                     {% else %}
                         Microframework leve e flexível para APIs e aplicações web
