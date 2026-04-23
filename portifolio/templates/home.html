@@ -68,7 +68,7 @@
             <div class="line"></div>
         </div>
         <div class="skills-grid">
-            {% for habilidade in habilidades %}
+            <!-- {% for habilidade in habilidades %}
             <div class="skill-card">
                 <div class="skill-icon">
                     {% if habilidade.nome == 'Python' %}
@@ -100,6 +100,17 @@
                         Microframework leve e flexível para APIs e aplicações web
                     {% endif %}
                 </p>
+            </div>
+            {% endfor %} -->
+            {% for habilidade in habilidades %}
+            <div class="skill-card">
+                <div class="skill-icon">
+                        <i class="{{ habilidade.icone }}"></i>
+                </div>
+                    <h3>{{ habilidade.nome }}</h3>
+                    <p>
+                        {{ habilidade.descricao}}
+                    </p>
             </div>
             {% endfor %}
         </div>
