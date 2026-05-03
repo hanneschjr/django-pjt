@@ -12,6 +12,6 @@ def lista_projetos(request):
     return render(request, 'projetos.html', {'projetos': projetos})
 
 def detalhes_projeto(request, id_projeto):
-    projeto = Projeto.get(id=id_projeto)
-    infos = projeto.get('tecnologia').split(', ')
+    projeto = Projeto.objects.get(id=id_projeto)
+    infos = projeto.tecnologia.all()
     return render(request, 'detalhes_projeto.html', {'projeto': projeto, 'infos': infos})

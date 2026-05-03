@@ -152,6 +152,11 @@
     font-size: 1.5rem;
 }
 
+.skill-icon i {
+    color: var(--card);
+    font-size: 1.7rem;
+}
+
 .skill-card h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -220,6 +225,11 @@
 .contact-info p {
     color: var(--muted);
     font-size: 0.875rem;
+}
+
+.contact-icon i {
+    font-size: 1.7rem;
+    color: var(--accent);
 }
 
 /* Responsive */
