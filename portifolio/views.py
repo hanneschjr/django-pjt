@@ -6,6 +6,7 @@ from .models import Habilidade, Projeto
 def home(request):
     habilidades = Habilidade.objects.all()
     return render(request, 'home.html', {'habilidades': habilidades})
+    
 
 def lista_projetos(request):
     projetos = Projeto.objects.all()

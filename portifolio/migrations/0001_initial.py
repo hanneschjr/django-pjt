@@ -18,7 +18,17 @@ class Migration(migrations.Migration):
                 ('nome', models.CharField(max_length=100)),
                 ('descricao', models.TextField(blank=True, null=True)),
                 ('icone', models.CharField(blank=True, max_length=30, null=True)),
-                ('categoria', models.CharField(choices=[('linguagem', 'Linguagem'), ('framework', 'Framework'), ('database', 'Banco de Dados'), ('tool', 'Ferramenta'), ('container', 'Containerização'), ('os', 'Sistema Operacional'), ('outro', 'Outro')], default='outro', max_length=20)),
+                ('categoria', models.CharField(
+                    choices=[
+                            ('linguagem', 'Linguagem'),
+                            ('framework', 'Framework'),
+                            ('database', 'Banco de Dados'), 
+                            ('tool', 'Ferramenta'), 
+                            ('container', 'Containerização'), 
+                            ('os', 'Sistema Operacional'), 
+                            ('outro', 'Outro')], 
+                    default='outro', 
+                    max_length=20)),
             ],
         ),
         migrations.CreateModel(

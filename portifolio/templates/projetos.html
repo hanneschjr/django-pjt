@@ -18,7 +18,7 @@
             </div>
             <div class="project-content">
                 <h3>{{ projeto.titulo }}</h3>
-                <p>{{ projeto.descricao }}</p>
+                <p>{{ projeto.descricao | safe }}</p>
                 <div class="project-tags">
                     {% for tech in infos %}
                         <span class="tag">{{ tech }}</span>
