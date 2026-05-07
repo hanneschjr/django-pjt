@@ -1,11 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from .dados import habilidades, projetos
 from .models import Habilidade, Projeto
+from django.core.mail import send_mail
+from .forms import ContatoForm
 
 # Create your views here.
 def home(request):
     habilidades = Habilidade.objects.all()
-    return render(request, 'home.html', {'habilidades': habilidades})
+    form = ContatoForm()
+    return render(request, 'home.html', {'habilidades': habilidades, "contact_form": form})
     
 
 def lista_projetos(request):
@@ -16,3 +19,26 @@ def detalhes_projeto(request, id_projeto):
     projeto = Projeto.objects.get(id=id_projeto)
     infos = projeto.tecnologia.all()
     return render(request, 'detalhes_projeto.html', {'projeto': projeto, 'infos': infos})
+
+def send_email_view(request):
+
+    if request.method == "POST":
+
+        form = ContatoForm(request.POST)
+
+        if form.is_valid():
+
+            name = form.cleaned_data["name"]
+
+            email = form.cleaned_data["email"]
+
+            mensagem = form.cleaned_data["mensagem"]
+
+            send_mail(
+                subject=f"Mensagem de {name}",
+                mensagem=mensagem,
+                from_email=email,
+                recipient_list=["seuemail@email.com"]
+            )
+
+    return redirect("home")

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% include "components/email_modal.html" %}
 
 {% block title %}HanneschJr | Desenvolvedor Python{% endblock %}
 
@@ -89,7 +90,7 @@
             <div class="line"></div>
         </div>
         <div class="contact-grid">
-            <a href="mailto:antonio@example.com" class="contact-card">
+            <a href="#" class="contact-card" id="open-email-modal">
                 <div class="contact-icon">
                     <i class="fa-solid fa-envelope"></i>
                 </div>
@@ -128,4 +129,10 @@
             </a>
         </div>
     </section>
+    
+    <!-- MODAL -->
+    {% include "components/email_modal.html" %}
+
+    <!-- JS -->
+    <script src="{% static 'js/modal.js' %}"></script>
 {% endblock %}
