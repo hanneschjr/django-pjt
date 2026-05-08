@@ -21,21 +21,17 @@ def detalhes_projeto(request, id_projeto):
     return render(request, 'detalhes_projeto.html', {'projeto': projeto, 'infos': infos})
 
 def send_email_view(request):
-
     if request.method == "POST":
-
         form = ContatoForm(request.POST)
-
         if form.is_valid():
-
-            name = form.cleaned_data["name"]
-
+            nome = form.cleaned_data["nome"]
             email = form.cleaned_data["email"]
-
+            assunto = form.cleaned_data["assunto"]
             mensagem = form.cleaned_data["mensagem"]
 
             send_mail(
-                subject=f"Mensagem de {name}",
+                nome=nome,
+                assunto=assunto,
                 mensagem=mensagem,
                 from_email=email,
                 recipient_list=["seuemail@email.com"]

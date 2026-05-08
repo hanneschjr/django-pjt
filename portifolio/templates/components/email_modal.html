@@ -1,3 +1,4 @@
+
 <div id="email-modal" class="modal-overlay">
 
     <div class="modal-container">
@@ -9,13 +10,14 @@
         <h2>Enviar mensagem</h2>
 
         <form method="post" action="{% url 'send_email' %}">
-            {% csrf_token %}
 
-            {{ contact_form.name }}
-            {{ contact_form.email }}
-            {{ contact_form.message }}
-
-            <button type="submit">
+                {% csrf_token %}
+                Nome: {{ contact_form.nome }}
+                E-mail: {{ contact_form.email }}
+                Assunto: {{ contact_form.assunto }}
+                Mensagem: {{ contact_form.mensagem }}
+    
+            <button type="submit" class="send-btn">
                 Enviar
             </button>
         </form>
