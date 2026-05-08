@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
 # from .dados import habilidades, projetos
+from django.shortcuts import render, redirect
 from .models import Habilidade, Projeto
 from django.core.mail import send_mail
 from .forms import ContatoForm
@@ -29,10 +29,17 @@ def send_email_view(request):
             assunto = form.cleaned_data["assunto"]
             mensagem = form.cleaned_data["mensagem"]
 
+            mensagem_completa = f"""
+            Nome: {nome}
+            Email: {email}
+
+            Mensagem:
+            {mensagem}
+            """
+
             send_mail(
-                nome=nome,
-                assunto=assunto,
-                mensagem=mensagem,
+                subject=assunto,
+                message=mensagem_completa,
                 from_email=email,
                 recipient_list=["seuemail@email.com"]
             )
