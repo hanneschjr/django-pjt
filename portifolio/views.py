@@ -1,8 +1,10 @@
 # from .dados import habilidades, projetos
 from django.shortcuts import render, redirect
 from .models import Habilidade, Projeto
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from .forms import ContatoForm
+from django.conf import settings
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -37,11 +39,14 @@ def send_email_view(request):
             {mensagem}
             """
 
-            send_mail(
+            email_obj = EmailMessage(
                 subject=assunto,
-                message=mensagem_completa,
-                from_email=email,
-                recipient_list=["seuemail@email.com"]
+                body=mensagem_completa,
+                from_email=settings.EMAIL_DEFAULT_FROM_EMAIL,
+                to=[settings.EMAIL_HOST_USER],
+                reply_to=[email],
             )
 
+            email_obj.send()
+            messages.success(request, "Mensagem enviada com sucesso!")
     return redirect("home")

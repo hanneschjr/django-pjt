@@ -20,14 +20,14 @@ closeBtn.addEventListener("click", function() {
 
 });
 
+// Ativar se desejar fechar o modal clicando fora dele:
+// window.addEventListener("click", function(event) {
 
-window.addEventListener("click", function(event) {
+//     if (event.target === modal) {
 
-    if (event.target === modal) {
+//         modal.classList.remove("active");
 
-        modal.classList.remove("active");
+//     }
 
-    }
-
-});
+// });
 
