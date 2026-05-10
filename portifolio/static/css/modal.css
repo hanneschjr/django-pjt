@@ -21,6 +21,71 @@
     opacity: 1;
     visibility: visible;
 }
+/* =========================================
+   MESSAGE OVERLAY
+========================================= */
+.message-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    z-index: 9999;
+}
+
+/* Modal visível */
+.message-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   LOADING CONTAINER
+========================================= */
+
+#loading-overlay {
+    position: fixed;
+    inset: 0;                          /* cobre toda a tela */
+    background: rgba(0, 0, 0, 0.6);   /* fundo escurecido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   SPINNER
+========================================= */
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
 
 /* =========================================
    MODAL CONTAINER

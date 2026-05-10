@@ -97,7 +97,7 @@
                     
                 <div class="contact-info">
                     <h4>Email</h4>
-                    <p>hanneschj.dev@gmail.com</p>
+                    <p> </p>
                 </div>
             </a>
             <a href="https://linkedin.com/in/antonio" target="_blank" rel="noopener" class="contact-card">
@@ -115,7 +115,7 @@
                 </div>
                 <div class="contact-info">
                     <h4>WhatsApp</h4>
-                    <p>(11) 1234-5678</p>
+                    <p> </p>
                 </div>
             </a>
             <a href="https://github.com/hanneschjr" target="_blank" rel="noopener" class="contact-card">
@@ -132,6 +132,13 @@
     
     <!-- MODAL -->
     {% include "components/email_modal.html" %}
+    {% include "components/success_msg.html" %}
+<!-- 
+    {% if messages %}
+    <h1>TEM MESSAGES</h1>
+    {% else %}
+        <h1>NÃO TEM MESSAGES</h1>
+    {% endif %} -->
 
     <!-- JS -->
     <script src="{% static 'js/modal.js' %}"></script>
