@@ -1,6 +1,6 @@
 # from .dados import habilidades, projetos
 import smtplib
-
+import socket
 from django.shortcuts import render, redirect
 from .models import Habilidade, Projeto
 from django.core.mail import EmailMessage
@@ -51,13 +51,20 @@ def send_email_view(request):
             try:
                 email_obj.send()
                 messages.success(request, "Mensagem enviada com sucesso!")
+
             except smtplib.SMTPAuthenticationError:
                 messages.error(request, "Erro de autenticação no servidor.")
+
             except smtplib.SMTPConnectError:
                 messages.error(request, "Não foi possível conectar ao servidor.")
-            except TimeoutError:
-                messages.error(request, "Tempo de resposta esgotado. Tente novamente.")
-            except Exception as e:
-                messages.error(request, "Erro inesperado. Tente novamente mais tarde.")
+
+            except socket.timeout:
+                messages.error(request, "Tempo de resposta esgotado.")
+
+            except OSError:
+                messages.error(request, "Erro de conexão de rede.")
+
+            except Exception:
+                messages.error(request, "Erro inesperado.")
                 
     return redirect("home")
