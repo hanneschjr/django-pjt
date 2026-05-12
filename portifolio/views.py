@@ -1,4 +1,6 @@
 # from .dados import habilidades, projetos
+import smtplib
+
 from django.shortcuts import render, redirect
 from .models import Habilidade, Projeto
 from django.core.mail import EmailMessage
@@ -46,7 +48,16 @@ def send_email_view(request):
                 to=[settings.EMAIL_HOST_USER],
                 reply_to=[email],
             )
-
-            email_obj.send()
-            messages.success(request, "Mensagem enviada com sucesso!")
+            try:
+                email_obj.send()
+                messages.success(request, "Mensagem enviada com sucesso!")
+            except smtplib.SMTPAuthenticationError:
+                messages.error(request, "Erro de autenticação no servidor.")
+            except smtplib.SMTPConnectError:
+                messages.error(request, "Não foi possível conectar ao servidor.")
+            except TimeoutError:
+                messages.error(request, "Tempo de resposta esgotado. Tente novamente.")
+            except Exception as e:
+                messages.error(request, "Erro inesperado. Tente novamente mais tarde.")
+                
     return redirect("home")

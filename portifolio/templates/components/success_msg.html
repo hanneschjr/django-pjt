@@ -6,7 +6,7 @@
         <div class="modal-container">
 
             {% for message in messages %}
-                <h2>{{ message }}</h2>
+                <h3 class="{{message.tags}}">{{ message }}</h3>
             {% endfor %}
         </div>
     </div>
