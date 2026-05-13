@@ -1,0 +1,16 @@
+
+{% if messages %}
+
+    <div id="email-msg-modal" class="message-overlay active">
+
+        <div class="modal-container">
+
+            {% for message in messages %}
+                <center><h3 class="{{message.tags}}">{{ message }}</h3></center>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endif %}
+
+

@@ -23,54 +23,16 @@ closeBtn.addEventListener("click", function() {
 });
 
 
-
-// const form = document.getElementById("contact-form");
-
-// Abrir o modal
-openBtn.addEventListener("click", function(event) {
-
-    event.preventDefault();
-
-    modal.classList.add("active");
-
-});
-
-// Fechar o modal
-closeBtn.addEventListener("click", function() {
-
-    modal.classList.remove("active");
-
-});
-
-// Fechar o modal ao enviar o formulário
-// form.addEventListener("submit", function(event) {
-
-//     modal.classList.remove("active");
-
-// });
-
-
-// Ativar se desejar fechar o modal clicando fora dele:
-// window.addEventListener("click", function(event) {
-
-//     if (event.target === modal) {
-
-//         modal.classList.remove("active");
-
-//     }
-
-// });
-
 // Fechar o modal automaticamente após 5 segundos
 document.addEventListener("DOMContentLoaded", () => {
 
-    const successModal = document.getElementById("success-modal");
+    const msgModal = document.getElementById("email-msg-modal");
 
-    if (successModal) {
+    if (msgModal) {
 
         setTimeout(() => {
 
-            successModal.classList.remove("active");
+            msgModal.classList.remove("active");
 
         }, 5000);
 

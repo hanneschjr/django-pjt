@@ -48,6 +48,7 @@ def send_email_view(request):
                 to=[settings.EMAIL_HOST_USER],
                 reply_to=[email],
             )
+            
             try:
                 email_obj.send()
                 messages.success(request, "Mensagem enviada com sucesso!")
