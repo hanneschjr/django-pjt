@@ -17,7 +17,7 @@ openBtn.addEventListener("click", function(event) {
 
 // Fechar o modal
 closeBtn.addEventListener("click", function() {
-
+    form.reset();
     modal.classList.remove("active");
 
 });

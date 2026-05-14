@@ -16,6 +16,9 @@
                 E-mail: {{ contact_form.email }}
                 Assunto: {{ contact_form.assunto }}
                 Mensagem: {{ contact_form.mensagem }}
+                <div class="modal-recaptcha">
+                    {{ contact_form.captcha }}
+                </div>
     
             <button type="submit" class="send-btn">
                 Enviar
