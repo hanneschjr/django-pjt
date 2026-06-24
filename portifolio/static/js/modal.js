@@ -1,18 +1,12 @@
 const modal = document.getElementById("email-modal");
-
 const openBtn = document.getElementById("open-email-modal");
-
 const closeBtn = document.getElementById("close-email-modal");
-
 const form = document.getElementById("contact-form");
 
 // Abrir o modal
 openBtn.addEventListener("click", function(event) {
-
     event.preventDefault();
-
     modal.classList.add("active");
-
 });
 
 // Fechar o modal

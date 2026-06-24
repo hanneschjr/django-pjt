@@ -36,7 +36,6 @@ class ContatoForm(forms.Form):
             }
         )
     )
-    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox( attrs={'theme': 'dark'}))
     captcha = ReCaptchaField(
         widget=ReCaptchaV2Checkbox(
             attrs={
